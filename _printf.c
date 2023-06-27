@@ -13,6 +13,7 @@ int _printf(const char *format, ...)
 
 	char *str;
 	int ch;
+	int number;
 	int counter;
 	int i;
 
@@ -37,6 +38,16 @@ int _printf(const char *format, ...)
 				ch = va_arg(output_list, int);
 				counter += _putchar(ch);
 			}
+			else if (format[i] == 'd')
+			{
+				number = va_arg(output_list, int);
+				counter += print_digit(number);
+			}
+			else if (format[i] == 'i')
+			{
+				number = va_arg(output_list, int);
+				counter += print_digit(number);
+			}
 			else
 			{
 				_putchar('%');
@@ -49,7 +60,6 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-	_putchar('\n');
 	va_end(output_list);
 
 	return (counter);
