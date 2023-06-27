@@ -2,7 +2,7 @@
 
 
 /**
- * print_number - This function prints number
+ * print_digit - This function prints number
  * @number: The number to print
  * Return: int
  */
